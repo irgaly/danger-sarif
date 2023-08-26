@@ -12,7 +12,7 @@ require "danger"
 if `git remote -v` == ""
   puts "You cannot run tests without setting a local git remote on this repo"
   puts "It's a weird side-effect of Danger's internals."
-  exit(0)
+  #exit(0)
 end
 
 # Use coloured output, it's the best.
@@ -44,7 +44,16 @@ def testing_ui
   cork
 end
 
-# A stubbed out Dangerfile for use in tests
+def testing_env
+  {
+    "GITHUB_ACTION" => "name_of_action",
+    "GITHUB_EVENT_NAME" => "pull_request",
+    "GITHUB_REPOSITORY" => "danger/danger",
+    "GITHUB_EVENT_PATH" => File.expand_path("pull_request_event.json", __dir__),
+    "GITHUB_TOKEN" => "github_token"
+  }
+end
+
 def testing_dangerfile
   env = Danger::EnvironmentManager.new(testing_env)
   Danger::Dangerfile.new(env, testing_ui)
