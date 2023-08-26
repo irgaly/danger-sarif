@@ -49,7 +49,7 @@ def testing_env
     "GITHUB_ACTION" => "name_of_action",
     "GITHUB_EVENT_NAME" => "pull_request",
     "GITHUB_REPOSITORY" => "danger/danger",
-    "GITHUB_EVENT_PATH" => File.expand_path("pull_request_event.json", __dir__),
+    "GITHUB_EVENT_PATH" => File.expand_path("fixtures/pull_request_event.json", __dir__),
     "GITHUB_TOKEN" => "github_token"
   }
 end
