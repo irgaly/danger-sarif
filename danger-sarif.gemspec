@@ -25,4 +25,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", ">= 3.4"
   spec.add_development_dependency "faraday-retry", ">= 2.2.0"
   spec.add_development_dependency "yard", ">= 0.9.34"
+  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "code-scanning-rubocop"
+  spec.add_development_dependency "danger"
+  spec.add_development_dependency "danger-sarif"
 end
