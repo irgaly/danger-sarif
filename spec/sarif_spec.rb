@@ -75,6 +75,19 @@ module Danger
             expect(warnings.size).to eq 0
           end
         end
+        describe "with qodana-community-android.sarif" do
+          subject(:warnings) {
+            @sarif.parse("spec/fixtures/rubocop-code-scanning.sarif")
+          }
+          it "have a warning" do
+            expect(warnings.size).to eq 1
+          end
+          it "exact warning" do
+            expect(warnings[0].message).to eq "Style/FrozenStringLiteralComment: Missing frozen string literal comment."
+            expect(warnings[0].file).to eq "Dangerfile"
+            expect(warnings[0].line).to eq 1
+          end
+        end
       end
     end
   end

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "RuboCop",
+          "version": "1.56.1",
+          "informationUri": "https://rubocop.org",
+          "rules": [
+            {
+              "id": "Style/FrozenStringLiteralComment",
+              "name": "StyleFrozenStringLiteralComment",
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "properties": {
+                "precision": "very-high",
+                "description": "Add the frozen_string_literal comment to the top of files to help transition to frozen string literals by default.",
+                "tags": [
+                  "style"
+                ],
+                "queryURI": "https://docs.rubocop.org/rubocop/cops_style.html#stylefrozenstringliteralcomment"
+              },
+              "shortDescription": {
+                "text": "Add the frozen_string_literal comment to the top of files to help transition to frozen string literals by default."
+              },
+              "fullDescription": {
+                "text": "Add the frozen_string_literal comment to the top of files to help transition to frozen string literals by default."
+              },
+              "helpUri": "https://docs.rubocop.org/rubocop/cops_style.html#stylefrozenstringliteralcomment",
+              "help": {
+                "text": "More info: https://docs.rubocop.org/rubocop/cops_style.html#stylefrozenstringliteralcomment",
+                "markdown": "[More info](https://docs.rubocop.org/rubocop/cops_style.html#stylefrozenstringliteralcomment)"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "Style/FrozenStringLiteralComment",
+          "ruleIndex": 0,
+          "message": {
+            "text": "Style/FrozenStringLiteralComment: Missing frozen string literal comment."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Dangerfile",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
