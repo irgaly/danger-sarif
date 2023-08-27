@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/danger-sarif.svg)](https://badge.fury.io/rb/danger-sarif)
 
-[Danger](https://github.com/danger/danger) plugin for reporting SARIF file.
+[Danger](https://github.com/danger/danger) plugin for reporting [SARIF](https://sarifweb.azurewebsites.net/) file.
 
 ## Installation
 
