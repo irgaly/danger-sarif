@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Danger plugin for reporting SARIF file."
   spec.summary       = "Danger plugin for reporting SARIF file."
   spec.homepage      = "https://github.com/irgaly/danger-sarif"
-  spec.license       = "MIT"
+  spec.license       = "Apache-2.0"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
