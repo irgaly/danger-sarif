@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["irgaly"]
   spec.email         = ["irgaly@gmail.com"]
   spec.description   = "Danger plugin for reporting SARIF file."
-  spec.summary       = "Danger plugin for reporting SARIF file.."
+  spec.summary       = "Danger plugin for reporting SARIF file."
   spec.homepage      = "https://github.com/irgaly/danger-sarif"
   spec.license       = "MIT"
 
