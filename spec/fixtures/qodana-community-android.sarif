@@ -1,0 +1,224 @@
+{
+  "$schema": "https://raw.githubusercontent.com/schemastore/schemastore/master/src/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "QDANDC",
+          "fullName": "Qodana Community for Android",
+          "version": "232.9641.89",
+          "rules": [],
+          "taxa": [
+            {
+              "id": "Language injection",
+              "name": "Language injection"
+            },
+            {
+              "id": "JVM languages",
+              "name": "JVM languages"
+            },
+            {
+              "id": "Kotlin",
+              "name": "Kotlin"
+            }
+          ],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        },
+        "extensions": [
+          {
+            "name": "org.intellij.qodana",
+            "version": "232.9641",
+            "rules": [
+              {
+                "id": "QodanaSanity",
+                "shortDescription": {
+                  "text": "Sanity"
+                },
+                "fullDescription": {
+                  "text": "Reports issues essential to this file like syntax errors, unresolved methods and variables, etc...",
+                  "markdown": "Reports issues essential to this file like syntax errors, unresolved methods and variables, etc..."
+                },
+                "defaultConfiguration": {
+                  "enabled": false,
+                  "level": "error",
+                  "parameters": {
+                    "suppressToolId": "QodanaSanity",
+                    "ideaSeverity": "ERROR",
+                    "qodanaSeverity": "Critical"
+                  }
+                },
+                "relationships": [
+                  {
+                    "target": {
+                      "id": "Qodana",
+                      "index": 130,
+                      "toolComponent": {
+                        "name": "QDANDC"
+                      }
+                    },
+                    "kinds": [
+                      "superset"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "language": "en-US",
+            "contents": [
+              "localizedData",
+              "nonLocalizedData"
+            ],
+            "isComprehensive": false
+          }
+        ]
+      },
+      "invocations": [
+        {
+          "exitCode": 0,
+          "toolExecutionNotifications": [
+            {
+              "message": {
+                "text": "Reporting from [\"Sanity\"] 'sanity' inspections was suspended due to high problems count."
+              },
+              "level": "error"
+            }
+          ],
+          "executionSuccessful": true
+        }
+      ],
+      "language": "en-US",
+      "results": [
+        {
+          "ruleId": "UnusedSymbol",
+          "kind": "fail",
+          "level": "warning",
+          "message": {
+            "text": "Function \"GreetingPreview\" is never used",
+            "markdown": "Function \"GreetingPreview\" is never used"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/src/main/kotlin/com/example/myapplication/MainActivity.kt",
+                  "uriBaseId": "SRCROOT"
+                },
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 5,
+                  "charOffset": 1258,
+                  "charLength": 15,
+                  "snippet": {
+                    "text": "GreetingPreview"
+                  },
+                  "sourceLanguage": "kotlin"
+                },
+                "contextRegion": {
+                  "startLine": 40,
+                  "startColumn": 1,
+                  "charOffset": 1210,
+                  "charLength": 120,
+                  "snippet": {
+                    "text": "@Preview(showBackground = true)\n@Composable\nfun GreetingPreview() {\n    MyApplicationTheme {\n        Greeting(\"Android\")"
+                  },
+                  "sourceLanguage": "kotlin"
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "My_Application.app.main",
+                  "kind": "module"
+                }
+              ]
+            }
+          ],
+          "partialFingerprints": {
+            "equalIndicator/v1": "0377b1cd2e526ed175953f909a3fdb1ea390c702f0c0d2b7b28d9cbcce2d8bc7"
+          },
+          "properties": {
+            "ideaSeverity": "WARNING",
+            "qodanaSeverity": "High",
+            "tags": [
+              "kotlin"
+            ]
+          }
+        }
+      ],
+      "automationDetails": {
+        "id": "My Application/qodana/2023-08-27",
+        "guid": "56e8951f-0de0-4b46-b3b4-0d1a7e33a49a",
+        "properties": {
+          "jobUrl": ""
+        }
+      },
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ],
+      "properties": {
+        "qodana.sanity.results": [
+          {
+            "ruleId": "QodanaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference: os",
+              "markdown": "Unresolved reference: os"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "app/src/main/kotlin/com/example/myapplication/MainActivity.kt",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3,
+                    "startColumn": 16,
+                    "charOffset": 50,
+                    "charLength": 2,
+                    "snippet": {
+                      "text": "os"
+                    },
+                    "sourceLanguage": "kotlin"
+                  },
+                  "contextRegion": {
+                    "startLine": 1,
+                    "startColumn": 1,
+                    "charOffset": 0,
+                    "charLength": 146,
+                    "snippet": {
+                      "text": "package com.example.myapplication\n\nimport android.os.Bundle\nimport androidx.activity.ComponentActivity\nimport androidx.activity.compose.setContent"
+                    },
+                    "sourceLanguage": "kotlin"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "My_Application.app.main",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v1": "4c0b407f01032b20116d0a01c377a8abb3d536838213a94b6b56ec41cc59ebfd"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical"
+            }
+          }
+        ],
+        "configProfile": "recommended",
+        "deviceId": "200820300000000-0000-0000-0000-000000000000"
+      }
+    }
+  ]
+}

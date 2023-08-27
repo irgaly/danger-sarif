@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "originalUriBaseIds": {
+        "%SRCROOT%": {
+          "uri": "file:///Users/user_name/"
+        }
+      },
+      "results": [
+        {
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "project/app/src/main/kotlin/File.kt",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startColumn": 20,
+                  "startLine": 10
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Error Message from ktlint"
+          },
+          "ruleId": "ktlint-check-rule-id"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "downloadUri": "https://github.com/pinterest/ktlint/releases/tag/0.47.1",
+          "fullName": "ktlint",
+          "informationUri": "https://github.com/pinterest/ktlint/",
+          "language": "en",
+          "name": "ktlint",
+          "organization": "pinterest",
+          "rules": [
+          ],
+          "semanticVersion": "0.47.1",
+          "version": "0.47.1"
+        }
+      }
+    }
+  ]
+}

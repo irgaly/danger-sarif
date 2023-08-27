@@ -1,0 +1,109 @@
+{
+  "$schema": "https://raw.githubusercontent.com/schemastore/schemastore/master/src/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "QDANDC",
+          "fullName": "Qodana Community for Android",
+          "version": "232.9641.89",
+          "rules": [],
+          "taxa": [],
+          "language": "en-US",
+          "contents": [
+            "localizedData",
+            "nonLocalizedData"
+          ],
+          "isComprehensive": false
+        },
+        "extensions": []
+      },
+      "invocations": [
+        {
+          "exitCode": 0,
+          "toolExecutionNotifications": [
+            {
+              "message": {
+                "text": "Reporting from [\"Sanity\"] 'sanity' inspections was suspended due to high problems count."
+              },
+              "level": "error"
+            }
+          ],
+          "executionSuccessful": true
+        }
+      ],
+      "language": "en-US",
+      "results": [],
+      "automationDetails": {
+        "id": "MyApplication/qodana/2023-08-27",
+        "guid": "56e8951f-0de0-4b46-b3b4-0d1a7e33a49a",
+        "properties": {
+          "jobUrl": ""
+        }
+      },
+      "newlineSequences": [
+        "\r\n",
+        "\n"
+      ],
+      "properties": {
+        "qodana.sanity.results": [
+          {
+            "ruleId": "QodanaSanity",
+            "kind": "fail",
+            "level": "error",
+            "message": {
+              "text": "Unresolved reference: os",
+              "markdown": "Unresolved reference: os"
+            },
+            "locations": [
+              {
+                "physicalLocation": {
+                  "artifactLocation": {
+                    "uri": "app/src/main/kotlin/com/example/myapplication/MainActivity.kt",
+                    "uriBaseId": "SRCROOT"
+                  },
+                  "region": {
+                    "startLine": 3.0,
+                    "startColumn": 16.0,
+                    "charOffset": 50.0,
+                    "charLength": 2.0,
+                    "snippet": {
+                      "text": "os"
+                    },
+                    "sourceLanguage": "kotlin"
+                  },
+                  "contextRegion": {
+                    "startLine": 1.0,
+                    "startColumn": 1.0,
+                    "charOffset": 0.0,
+                    "charLength": 146.0,
+                    "snippet": {
+                      "text": "package com.example.myapplication\n\nimport android.os.Bundle\nimport androidx.activity.ComponentActivity\nimport androidx.activity.compose.setContent"
+                    },
+                    "sourceLanguage": "kotlin"
+                  }
+                },
+                "logicalLocations": [
+                  {
+                    "fullyQualifiedName": "MyApplication.app.main",
+                    "kind": "module"
+                  }
+                ]
+              }
+            ],
+            "partialFingerprints": {
+              "equalIndicator/v1": "4c0b407f01032b20116d0a01c377a8abb3d536838213a94b6b56ec41cc59ebfd"
+            },
+            "properties": {
+              "ideaSeverity": "ERROR",
+              "qodanaSeverity": "Critical"
+            }
+          }
+        ],
+        "configProfile": "recommended",
+        "deviceId": "200820300000000-0000-0000-0000-000000000000"
+      }
+    }
+  ]
+}

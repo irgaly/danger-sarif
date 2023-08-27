@@ -1,0 +1,61 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "originalUriBaseIds": {
+        "%SRCROOT%": {
+          "uri": "file:///Users/user_name/./"
+        }
+      },
+      "results": [
+        {
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app/src/main/kotlin/MyClass.kt",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 8,
+                  "endLine": 10,
+                  "startColumn": 20,
+                  "startLine": 10
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "This expression contains a magic number. Consider defining it to a well named constant."
+          },
+          "ruleId": "detekt.style.MagicNumber"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "downloadUri": "https://github.com/detekt/detekt/releases/download/v1.22.0/detekt",
+          "fullName": "detekt",
+          "guid": "022ca8c2-f6a2-4c95-b107-bb72c43263f3",
+          "informationUri": "https://detekt.dev",
+          "language": "en",
+          "name": "detekt",
+          "organization": "detekt",
+          "rules": [
+            {
+              "helpUri": "https://detekt.dev/style.html#magicnumber",
+              "id": "detekt.style.MagicNumber",
+              "name": "MagicNumber",
+              "shortDescription": {
+                "text": "Report magic numbers. Magic number is a numeric literal that is not defined as a constant and hence it's unclear what the purpose of this number is. It's better to declare such numbers as constants and give them a proper name. By default, -1, 0, 1, and 2 are not considered to be magic numbers."
+              }
+            }
+          ],
+          "semanticVersion": "1.22.0",
+          "version": "1.22.0"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+    "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+    "version" : "2.1.0",
+    "runs" : [
+        {
+            "tool": {
+                "driver": {
+                    "name": "Android Lint",
+                    "fullName": "Android Lint (in gradle)",
+                    "version": "8.0.0",
+                    "semanticVersion": "8.0.0",
+                    "organization": "Google",
+                    "informationUri": "https://developer.android.com/studio/write/lint",
+                    "fullDescription": {
+                        "text": "Static analysis originally for Android source code but now performing general analysis"
+                    },
+                    "language": "en-US",
+                    "rules": [
+                        {
+                            "id": "DuplicateIncludedIds",
+                            "shortDescription": {
+                                "text": "Duplicate ids across layouts combined with include tags"
+                            },
+                            "fullDescription": {
+                                "text": "It's okay for two independent layouts to use the same ids. However, if layouts are combined with include tags, then the id's need to be unique within any chain of included layouts, or Activity#findViewById() can return an unexpected view.",
+                                "markdown": "It's okay for two independent layouts to use the same ids. However, if layouts are combined with include tags, then the id's need to be unique within any chain of included layouts, or `Activity#findViewById()` can return an unexpected view."
+                            },
+                            "defaultConfiguration": {
+                                "level": "warning",
+                                "rank": 50
+                            },
+                            "properties": {
+                                "tags": [
+                                    "Correctness"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "originalUriBaseIds": {
+                "%SRCROOT%": {
+                    "uri": "file:///Users/user_name/"
+                },
+                "USER_HOME": {
+                    "uri": "file:///Users/user_name/"
+                }
+            },
+            "results": [
+                {
+                    "ruleId": "DuplicateIncludedIds",
+                    "ruleIndex": 0,
+                    "message": {
+                        "text": "Duplicate id @+id/view_id, defined or included multiple times in layout/my_layout.xml: [layout/my_layout.xml defines @+id/view_id, layout/my_layout.xml => layout/my_layout2.xml defines @+id/view_id]",
+                        "markdown": "Duplicate id @+id/view_id, defined or included multiple times in layout/my_layout.xml: [layout/my_layout.xml defines @+id/view_id, layout/my_layout.xml => layout/my_layout2.xml defines @+id/view_id]"
+                    },
+                    "locations": [
+                        {
+                            "message": {
+                                "text": "Duplicate id @+id/view_id, defined or included multiple times in layout/my_layout.xml: [layout/my_layout.xml defines @+id/view_id, layout/my_layout.xml => layout/my_layout2.xml defines @+id/view_id]"
+                            },
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "app/src/main/res/layout/my_layout.xml"
+                                },
+                                "region": {
+                                    "startLine": 10,
+                                    "startColumn": 20,
+                                    "endLine": 12,
+                                    "endColumn": 30,
+                                    "charOffset": 100,
+                                    "charLength": 200,
+                                    "snippet": {
+                                        "text": "<include\n                        android:id=\"@+id/view_id\"\n                        layout=\"@layout/my_layout2\"\n                        android:layout_width=\"wrap_content\"\n                        android:layout_height=\"wrap_content\" />"
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 8,
+                                    "endLine": 16,
+                                    "snippet": {
+                                        "text": "                    android:paddingEnd=\"10dp\">\n\n                    <include\n                        android:id=\"@+id/view_id\"\n                        layout=\"@layout/my_layout2\"\n                        android:layout_width=\"wrap_content\"\n                        android:layout_height=\"wrap_content\" />\n"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "relatedLocations": [
+                        {
+                            "id": 1,
+                            "message": {
+                                "text": "Defined here"
+                            },
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uriBaseId": "%SRCROOT%",
+                                    "uri": "app/src/main/res/layout/my_layout2.xml"
+                                },
+                                "region": {
+                                    "startLine": 10,
+                                    "startColumn": 13,
+                                    "endLine": 12,
+                                    "endColumn": 41,
+                                    "charOffset": 1000,
+                                    "charLength": 30,
+                                    "snippet": {
+                                        "text": "android:id=\"@+id/view_id\""
+                                    }
+                                },
+                                "contextRegion": {
+                                    "startLine": 8,
+                                    "endLine": 14,
+                                    "snippet": {
+                                        "text": "\n        <View\n            android:id=\"@+id/view_id\"\n            android:layout_width=\"match_parent\""
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "fixes": [
+                    ],
+                    "partialFingerprints": {
+                        "sourceContext/v1": "cd78196d6afed500"
+                    }
+                }
+            ]
+        }
+    ]
+}
