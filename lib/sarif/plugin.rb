@@ -12,7 +12,7 @@ module Danger
   #
   # @example report from multiple SARIF files
   #
-  #          Dir["**/build/reports/lint-results-*.sarif"].each do |file|
+  #          Dir['**/build/reports/lint-results-*.sarif'].each do |file|
   #            sarif.report file
   #          end
   #

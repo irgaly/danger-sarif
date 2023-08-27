@@ -1,12 +1,30 @@
 # danger-sarif
 
-Danger plugin for reporting SARIF file.
+[Danger](https://github.com/danger/danger) plugin for reporting SARIF file.
 
 ## Installation
 
-    $ gem install danger-sarif
+```shell
+$ gem install danger-sarif
+```
 
 ## Usage
+
+report from SARIF file
+
+```ruby
+# Dangerfile
+sarif.report 'app/build/reports/lint-results-debug.sarif'
+```
+
+report from multiple SARIF files
+
+```ruby
+# Dangerfile
+Dir['**/build/reports/lint-results-*.sarif'].each do |file|
+  sarif.report file
+end
+```
 
 ## Development
 
