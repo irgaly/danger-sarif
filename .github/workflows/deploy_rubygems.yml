@@ -1,0 +1,24 @@
+# v*.*.* tag -> deploy to RubyGems.org
+name: Deploy to RubyGems.org
+
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+*
+
+jobs:
+  deploy-rubygems:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Run Test
+        run: |
+          bundle exec rake spec
+      - name: Deploy to RubyGems.org
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+        run: |
+          bundle exec rake release
