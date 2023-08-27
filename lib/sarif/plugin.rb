@@ -47,7 +47,7 @@ module Danger
             artifactLocation = physicalLocation["artifactLocation"]
             base_uri = base_uris[artifactLocation["uriBaseId"]]
             uri = artifactLocation["uri"]
-            target_uri = if base_uri then
+            target_uri = if base_uri&.key?("uri") then
               File.join(base_uri["uri"], uri)
             else
               uri
