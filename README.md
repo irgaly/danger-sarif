@@ -28,6 +28,18 @@ Dir['**/build/reports/lint-results-*.sarif'].each do |file|
 end
 ```
 
+## Options
+
+| option                | description                                                        |
+|-----------------------|--------------------------------------------------------------------|
+| `sarif.fail_on_error` | Set the behavior that treating error as fail or not. default: true |
+
+```ruby
+# Dangerfile
+sarif.fail_on_error false
+sarif.report '...'
+```
+
 ## Development
 
 1. Clone this repo
