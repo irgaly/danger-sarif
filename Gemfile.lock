@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    danger-sarif (0.1.0)
+    danger-sarif (0.9.0)
       danger-plugin-api (>= 1.0)
 
 GEM
