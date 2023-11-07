@@ -42,9 +42,9 @@ module Danger
     def report(file, base_dir: nil)
       parse(file, base_dir: base_dir).each do |result|
         if @fail_on_error && result.instance_of?(Error) then
-          warn(result.message, file: result.file, line: result.line)
-        else
           fail(result.message, file: result.file, line: result.line)
+        else
+          warn(result.message, file: result.file, line: result.line)
         end
       end
     end
